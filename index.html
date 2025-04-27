@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Image Detector</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1><i class="fas fa-robot"></i> AI Image Detector</h1>
+            <p>Upload an image to check if it's AI-generated</p>
+        </header>
+        
+        <main>
+            <form id="upload-form" action="/detect" method="POST" enctype="multipart/form-data">
+                <div class="upload-area" id="drop-area">
+                    <input type="file" id="file-input" name="image" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <p>Drag & Drop an image or</p>
+                        <button type="button" id="select-button">Browse Files</button>
+                        <p class="file-info" id="file-info">No file selected</p>
+                    </div>
+                </div>
+                
+                <button type="submit" id="detect-button" disabled>
+                    <i class="fas fa-search"></i> Detect AI
+                </button>
+            </form>
+            
+            <div class="result-container" id="result-container">
+                <h2>Detection Results</h2>
+                <div class="result-content" id="result-content">
+                    <div class="result-placeholder">
+                        <i class="fas fa-image"></i>
+                        <p>Upload an image to see the results</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Powered by SightEngine API</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
